@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio: Geoff "Goldie" McIntosh</title>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    
+    
+<script>
+
+	//changes the name and text in the banner
+	function changeBanner(theName, theDesc)
+	{
+		var fieldNameElement = document.getElementById('name');	
+		fieldNameElement.innerHTML = theName;
+		
+		var fieldNameElement2 = document.getElementById('name_description');	
+		fieldNameElement2.innerHTML = theDesc;	
+		fieldNameElement2.style.color = "red";	
+	}
+	
+	//changes an image tag based on the theID value to the image specified by theImage
+	function changeImage(theID, theImage)
+	{
+		var pageImageElement = document.getElementById(theID);	
+		pageImageElement.src = theImage;		
+	}
+	
+	//changes the label and color of a div tag
+	function changeLabel(theID, theLabel, theColor)
+	{
+		var pageElement = document.getElementById(theID);
+		pageElement.innerHTML = theLabel;
+		pageElement.style.color = theColor;
+	}
+	
+	//changes the various app images, labels and links
+	function changeApp(theImage, theLabel, theLink, thePerson)
+	{
+		if (thePerson == 'lew_rockwell')
+		{
+			var pageImageElement = document.getElementById(theImage);
+			var pageLabelElement = document.getElementById(theLabel);
+			var pageLinkElement = document.getElementById(theLink);
+			
+			pageImageElement.src = 'images/lew_rockwell.jpg';
+			pageLabelElement.innerHTML = 'ROCKWELL';
+			pageLinkElement.innerHTML = 'http://www.lewrockwell.com';	
+			pageLinkElement.href = 'http://www.lewrockwell.com';
+		}
+		else if (thePerson == 'mencken')
+		{
+			var pageImageElement = document.getElementById(theImage);
+			var pageLabelElement = document.getElementById(theLabel);
+			var pageLinkElement = document.getElementById(theLink);
+			
+			pageImageElement.src = 'images/mencken.jpg';
+			pageLabelElement.innerHTML = 'MENCKEN';
+			pageLinkElement.innerHTML = 'http://www.mencken.org';
+			pageLinkElement.href = 'http://www.mencken.org';			
+		}
+		else if (thePerson == 'thoreau')
+		{
+			var pageImageElement = document.getElementById(theImage);
+			var pageLabelElement = document.getElementById(theLabel);
+			var pageLinkElement = document.getElementById(theLink);
+			
+			pageImageElement.src = 'images/thoreau.jpg';
+			pageLabelElement.innerHTML = 'THOREAU';
+			pageLinkElement.innerHTML = 'http://www.strike-the-root.com';	
+			pageLinkElement.href = 'http://www.strike-the-root.com';		
+		}		
+	}
+	
+	//sets everything back to their original values
+	function restorOriginalPage()
+	{
+		//restore the banner
+		var fieldNameElement = document.getElementById('name');	
+		fieldNameElement.innerHTML = 'JANE DOETTE';
+		
+		var fieldNameElement2 = document.getElementById('name_description');	
+		fieldNameElement2.innerHTML = 'FRONT-END NINJA';	
+		fieldNameElement2.style.color = "black";
+		
+		//restore the logo
+		changeImage('page_logo', 'images/udacity_logo.png');
+		
+		//retore the break to black
+		document.getElementById('line_break').style.background = '#BCBBBB';
+					
+		//restore the center image
+		changeImage('center_image', 'images/code_snippet.png');
+		
+		//restore the content header
+		changeLabel('content_header1', 'Featured Work', '#BCBBBB');
+		
+		//restore the apps
+		var pageImageElement = document.getElementById('app_image1');
+		var pageLabelElement = document.getElementById('app_label1');
+		var pageLinkElement = document.getElementById('app_link1');		
+		pageImageElement.src = 'images/appify.png';
+		pageLabelElement.innerHTML = 'APPIFY';
+		pageLinkElement.innerHTML = 'https://github.com/udacity/Appify/';	
+		pageLinkElement.href = 'https://github.com/udacity/Appify/';		
+		
+		pageImageElement = document.getElementById('app_image2');
+		pageLabelElement = document.getElementById('app_label2');
+		pageLinkElement = document.getElementById('app_link2');		
+		pageImageElement.src = 'images/sunflower.png';
+		pageLabelElement.innerHTML = 'SUNFLOWER';
+		pageLinkElement.innerHTML = 'https://github.com/udacity/Sunflower/';	
+		pageLinkElement.href = 'https://github.com/udacity/Sunflower/';	
+		
+		pageImageElement = document.getElementById('app_image3');
+		pageLabelElement = document.getElementById('app_label3');
+		pageLinkElement = document.getElementById('app_link3');		
+		pageImageElement.src = 'images/bokeh.png';
+		pageLabelElement.innerHTML = 'BOKEH';
+		pageLinkElement.innerHTML = 'https://github.com/udacity/Bokeh/';	
+		pageLinkElement.href = 'https://github.com/udacity/Bokeh/';				
+	}
+
+</script>    
+    
+</head>
+
+<body>
+<div id="main_content">
+	<div class="row">
+    	<div class="col-6"><img src="images/udacity_logo.png" alt="logo" onMouseOver="changeImage('page_logo', 'images/art_deco_anarchy.jpg');" id="page_logo"></div>
+        <div class="col-6">
+        	<div class="bannerTextLarge" id="name" onMouseOver="changeBanner('G. MCINTOSH','INCORRIGIBLE ANARCHIST');">JANE DOETTE</div>
+            <div class="bannerTextSmall" id="name_description" onMouseOver="changeBanner('G. MCINTOSH','INCORRIGIBLE ANARCHIST');">FRONT-END NINJA</div>
+        </div>
+    </div>
+    <div class="rowGrey" onMouseOver="this.style.background='black'" id='line_break'>
+    	&nbsp;
+    </div>
+    <div class="rowBottomMargin">
+    	<img src="images/code_snippet.png" alt="code snippet image" width="883" onMouseOver="changeImage('center_image', 'images/lysander_spooner.jpg');" onClick="restorOriginalPage();" id="center_image">
+    </div>
+    <div class="rowNoMargin">
+    	<p class="contentHeader" id="content_header1" onMouseOver="changeLabel('content_header1', 'Random Reading', 'black');">Featured Work</p>
+    </div>
+    <div class="rowNoMargin">
+    	<div class="col-4">
+        	<img src="images/appify.png" alt="app image one" id="app_image1" onMouseOver="changeApp('app_image1', 'app_label1', 'app_link1', 'lew_rockwell');">
+            <BR>
+            <p class="appLabel" id="app_label1">APPIFY</p>
+            <BR>
+            <a href="https://github.com/udacity/Appify/" class="pageLink" id="app_link1">https://github.com/udacity/Appify/</a>
+        </div>
+    	<div class="col-4">
+        	<img src="images/sunflower.png" alt="app image two" id="app_image2" onMouseOver="changeApp('app_image2', 'app_label2', 'app_link2', 'mencken');">
+            <BR>
+            <p class="appLabel" id="app_label2">SUNFLOWER</p>
+            <BR>
+            <a href="https://github.com/udacity/Sunflower/" class="pageLink" id="app_link2">https://github.com/udacity/Sunflower/</a>           
+        </div>
+    	<div class="col-4">
+        	<img src="images/bokeh.png" alt="app image three" id="app_image3" onMouseOver="changeApp('app_image3', 'app_label3', 'app_link3', 'thoreau');">
+            <BR>
+            <p class="appLabel" id="app_label3">BOKEH</p>
+            <BR>
+            <a href="https://github.com/udacity/Bokeh/" class="pageLink" id="app_link3">https://github.com/udacity/Bokeh/</a>                 
+        </div>                
+    </div>
+</div>
+	<!--
+    <h1>Framework Test Page</h1>
+    <div class="row">
+    	<div class="screenshot"><img src="images/app.png" alt="This is a screenshot"></div>
+        <div class="description"><p>In ac ipsum quis turpis adipiscing commodo. <em>Mauris fermentum quam</em> in risus eleifend fringilla. <a href="#">Aliquam placerat</a>, ipsum sit amet cursus rhoncus, augue mi tincidunt erat, et consequat velit massa a velit. Cras eleifend lectus nec diam ornare, eu placerat mi ultricies. Etiam tempor iaculis feugiat. Ut tincidunt tempus libero non convallis. Morbi consequat eros eget elit porta porta. Curabitur placerat eros dui, vitae lobortis sapien laoreet ac. Maecenas a lacus diam. Morbi ante lectus, ornare sed suscipit at, tempus elementum purus. Suspendisse sodales hendrerit pharetra. Integer odio risus, convallis eu egestas ac, venenatis nec leo.</p></div>
+    </div>-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+}
+
+#banner{
+	background-color: #33BEBE;
+	color: white;
+	font-size: 67px;
+	font-family: Arial;
+	text-align: left;
+	padding: 20px;
+	margin: 0;
+	margin-bottom: 50px;
+	width: 1000px;	
+}
+
+.app{
+	display: flex;
+}
+
+.screenshot{
+	margin-right: 20px;
+	width: auto;
+}
+
+.description{	
+	width: 550px;
+}
